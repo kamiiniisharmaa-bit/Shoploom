@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Shoploom — Modern E-comm Experience</title>
+  <!-- Google Fonts & simple CSS reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1a1e2b;
+      line-height: 1.4;
+      scroll-behavior: smooth;
+    }
+
+    /* container utility */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* buttons */
+    .btn-primary {
+      display: inline-block;
+      background-color: #1a1e2b;
+      color: white;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      letter-spacing: -0.2px;
+    }
+
+    .btn-primary:hover {
+      background-color: #2d3348;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      border: 1.5px solid #1a1e2b;
+      color: #1a1e2b;
+      font-weight: 600;
+      padding: 10px 24px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: #1a1e2b;
+      color: white;
+    }
+
+    /* header / nav */
+    .navbar {
+      padding: 20px 0;
+      border-bottom: 1px solid #eef2f6;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(2px);
+      background-color: rgba(255,255,255,0.96);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #1a1e2b 0%, #2c3e66 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .logo span {
+      font-size: 0.9rem;
+      font-weight: 400;
+      background: none;
+      -webkit-background-clip: unset;
+      color: #5b6b8c;
+      display: block;
+      letter-spacing: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c3e50;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #1a1e2b;
+    }
+
+    .cart-icon {
+      position: relative;
+      font-size: 1.3rem;
+    }
+
+    /* hero */
+    .hero {
+      padding: 70px 0 80px;
+      background: #fafcff;
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-content .badge {
+      background: #eaeef5;
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+      color: #1a3b5d;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      color: #0e1c2f;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: #4a5568;
+      margin-bottom: 30px;
+      max-width: 90%;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 32px;
+      box-shadow: 0 25px 45px -12px rgba(0,0,0,0.2);
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+    }
+
+    /* category section */
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 60px 0 40px;
+      letter-spacing: -0.3px;
+    }
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .category-card {
+      background: #ffffff;
+      border-radius: 28px;
+      text-align: center;
+      padding: 20px 20px 20px;
+      transition: all 0.25s;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      border: 1px solid #f0f2f5;
+      width: 160px;
+    }
+
+    .category-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+      border-color: #e2e8f0;
+    }
+
+    .category-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 60%;
+      margin-bottom: 14px;
+    }
+
+    .category-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    /* featured products grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 32px;
+      margin: 30px 0 20px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      border: 1px solid #edf2f7;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.02);
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 36px -12px rgba(0, 0, 0, 0.12);
+      border-color: #e2e8f0;
+    }
+
+    .product-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      background: #f9fafb;
+      transition: 0.2s;
+    }
+
+    .product-info {
+      padding: 18px 16px 20px;
+    }
+
+    .product-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+
+    .product-price {
+      font-weight: 700;
+      color: #1e293b;
+      font-size: 1.2rem;
+      margin: 8px 0;
+    }
+
+    .product-rating {
+      color: #f5b042;
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+    }
+
+    .add-to-cart {
+      background: #f1f5f9;
+      border: none;
+      padding: 10px 0;
+      width: 100%;
+      border-radius: 60px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .add-to-cart:hover {
+      background: #1a1e2b;
+      color: white;
+    }
+
+    /* banner / promotion */
+    .promo-banner {
+      background: linear-gradient(110deg, #eef2ff 0%, #e0e9ff 100%);
+      border-radius: 48px;
+      margin: 70px 0;
+      padding: 48px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .promo-text h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .promo-text p {
+      color: #334155;
+      max-width: 400px;
+    }
+
+    /* footer */
+    footer {
+      background-color: #f8fafc;
+      border-top: 1px solid #eef2f6;
+      padding: 50px 0 30px;
+      margin-top: 60px;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer-col h4 {
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .footer-col p, .footer-col a {
+      color: #475569;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #e2e8f0;
+      color: #5b6b8c;
+      font-size: 0.8rem;
+    }
+
+    /* toast message */
+    .toast-msg {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1e293b;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.2s;
+      pointer-events: none;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 800px) {
+      .hero-content h1 {
+        font-size: 2.4rem;
+      }
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .hero-grid {
+        flex-direction: column;
+      }
+      .promo-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTV0NLN2X5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-NTV0NLN2X5');
+</script>
+
+
+</head>
+<body>
+
+<div class="toast-msg" id="toastMsg">✨ Added to cart</div>
+
+<header class="navbar">
+  <div class="container nav-container">
+    <div class="logo">
+      <h1>SHOPLOOM <span>weave your style</span></h1>
+    </div>
+    <div class="nav-links">
+     <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+        <i class="fas fa-bag-shopping"></i>
+        <span id="cartCountBadge" style="font-size: 0.7rem; background:#1a1e2b; color:white; border-radius: 30px; padding: 2px 6px; position: absolute; top: -10px; right: -14px;">0</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Hero section with working image (Unsplash high-res lifestyle) -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="badge">✨ New Season Drop</div>
+        <h1>Where threads<br>tell your story.</h1>
+        <p>Minimalist design, bold comfort — curated pieces that elevate everyday style. Discover the loom-crafted collection.</p>
+        <a href="#" class="btn-primary">Shop now <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
+        <div style="margin-top: 30px; display: flex; gap: 24px;">
+          <div><strong>Free shipping</strong><br>on orders $50+</div>
+          <div><strong>30 days</strong><br>easy returns</div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=700&auto=format" alt="Shoploom hero model with modern fashion" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories section with working images (placeholder handmade but real unsplash) -->
+  <div class="container">
+    <div class="section-title">Shop by category</div>
+    <div class="categories">
+      <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=150&h=150&fit=crop" alt="men wear">
+        <h3>Men</h3>
+      </div>
+      <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=150&h=150&fit=crop" alt="women fashion">
+        <h3>Women</h3>
+      </div>
+      <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?w=150&h=150&fit=crop" alt="accessories">
+        <h3>Accessories</h3>
+      </div>
+      <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=150&h=150&fit=crop" alt="footwear">
+        <h3>Footwear</h3>
+      </div>
+      <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=150&h=150&fit=crop" alt="activewear">
+        <h3>Active</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured products section all images fully working -->
+  <div class="container">
+    <div class="section-title">Featured this week</div>
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
+
+  <!-- Promo banner with lifestyle image (working) -->
+  <div class="container">
+    <div class="promo-banner">
+      <div class="promo-text">
+        <h3>Limited edition: “Raw Loom”</h3>
+        <p>Handcrafted organic cotton pieces, made ethically. Get 15% off your first order.</p>
+        <a href="#" class="btn-primary" style="background:#1f2b3c; margin-top: 10px;">Claim offer →</a>
+      </div>
+      <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?w=300&auto=format" style="max-width: 180px; border-radius: 30px;" alt="sustainable fashion">
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>SHOPLOOM</h4>
+        <p>We believe in timeless fashion that respects both people and planet. Every thread, intentional.</p>
+        <div style="margin-top: 10px;">
+          <i class="fab fa-instagram" style="margin-right: 15px;"></i>
+          <i class="fab fa-twitter" style="margin-right: 15px;"></i>
+          <i class="fab fa-pinterest"></i>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#">New arrivals</a>
+        <a href="#">Best sellers</a>
+        <a href="#">Sustainability</a>
+        <a href="#">Gift cards</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">Contact</a>
+        <a href="#">Returns & exchanges</a>
+        <a href="#">Size guide</a>
+        <a href="#">FAQs</a>
+      </div>
+      <div class="footer-col">
+        <h4>Sign up for updates</h4>
+        <p style="margin-bottom: 12px;">Get early access to drops</p>
+        <div style="display: flex; gap: 8px;">
+          <input type="email" placeholder="Email" style="padding: 10px; border-radius: 40px; border: 1px solid #ccc; flex:1;">
+          <button class="btn-primary" style="padding: 10px 16px;">→</button>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2025 Shoploom — Weave your essence. All imagery and concepts inspired.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // product database with high-quality working images (unsplash reliable)
+  const products = [
+    {
+      id: 1,
+      name: "Oversized Linen Shirt",
+      price: 79,
+      rating: 4.8,
+      image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&auto=format"
+    },
+    {
+      id: 2,
+      name: "Merino Wool Sweater",
+      price: 129,
+      rating: 4.9,
+      image: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&auto=format"
+    },
+    {
+      id: 3,
+      name: "Relaxed Tailored Trousers",
+      price: 98,
+      rating: 4.7,
+      image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&auto=format"
+    },
+    {
+      id: 4,
+      name: "Leather Weekender Bag",
+      price: 149,
+      rating: 4.9,
+      image: "https://images.unsplash.com/photo-1547949003-9792a18a2601?w=400&auto=format"
+    },
+    {
+      id: 5,
+      name: "Classic Denim Jacket",
+      price: 119,
+      rating: 4.8,
+      image: "https://images.unsplash.com/photo-1576995853123-5a30105d8705?w=400&auto=format"
+    },
+    {
+      id: 6,
+      name: "Silk-blend Midi Dress",
+      price: 139,
+      rating: 4.9,
+      image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=400&auto=format"
+    }
+  ];
+
+  let cart = [];   // store product ids
+
+  // helper to update cart badge & toast
+  function updateCartBadge() {
+    const badge = document.getElementById('cartCountBadge');
+    if (badge) {
+      const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+      badge.innerText = totalItems;
+    }
+  }
+
+  function showToastMessage(message) {
+    const toast = document.getElementById('toastMsg');
+    if (!toast) return;
+    toast.innerText = message || '✨ Added to cart';
+    toast.style.opacity = '1';
+    setTimeout(() => {
+      toast.style.opacity = '0';
+    }, 2000);
+  }
+
+  function addToCart(productId) {
+    const existing = cart.find(item => item.id === productId);
+    if (existing) {
+      existing.quantity = (existing.quantity || 1) + 1;
+    } else {
+      cart.push({ id: productId, quantity: 1 });
+    }
+    updateCartBadge();
+    const product = products.find(p => p.id === productId);
+    showToastMessage(`✓ ${product ? product.name : 'Item'} added`);
+  }
+
+  // render product grid
+  function renderProducts() {
+    const grid = document.getElementById('productsGrid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    products.forEach(prod => {
+      const productCard = document.createElement('div');
+      productCard.className = 'product-card';
+      // star rating display
+      const fullStars = Math.floor(prod.rating);
+      const halfStar = (prod.rating % 1) >= 0.5;
+      let starsHtml = '';
+      for (let i = 0; i < fullStars; i++) starsHtml += '<i class="fas fa-star"></i>';
+      if (halfStar) starsHtml += '<i class="fas fa-star-half-alt"></i>';
+      const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+      for (let i = 0; i < emptyStars; i++) starsHtml += '<i class="far fa-star"></i>';
+      
+      productCard.innerHTML = `
+        <img class="product-img" src="${prod.image}" alt="${prod.name}" loading="lazy" onerror="this.onerror=null; this.src='https://placehold.co/400x400?text=Shoploom+Style'">
+        <div class="product-info">
+          <div class="product-title">${prod.name}</div>
+          <div class="product-price">$${prod.price}</div>
+          <div class="product-rating">${starsHtml} ${prod.rating}</div>
+          <button class="add-to-cart" data-id="${prod.id}"><i class="fas fa-shopping-bag"></i> Add to cart</button>
+        </div>
+      `;
+      grid.appendChild(productCard);
+    });
+
+    // attach event listeners to all add-to-cart buttons
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = parseInt(btn.getAttribute('data-id'));
+        if (!isNaN(id)) addToCart(id);
+      });
+    });
+  }
+
+  // also ensure category images and hero images are properly displaying (fallbacks if needed, but unsplash works)
+  // for extra safety, define image fallback but all unsplash urls are live.
+  // optional: add a tiny cart sidebar simulation? not necessary, just badge.
+  // initial render
+  renderProducts();
+  updateCartBadge();
+
+  // fix for any broken product images (replace placeholder gracefully)
+  document.addEventListener('error', function(e) {
+    if (e.target.tagName === 'IMG') {
+      const img = e.target;
+      if (!img.src.includes('placehold') && !img.complete) {
+        // avoid infinite loop
+        if (!img.dataset.fallbackSet) {
+          img.dataset.fallbackSet = 'true';
+          img.src = 'https://images.unsplash.com/photo-1523381294911-8d3cead13475?w=400&auto=format';
+        }
+      }
+    }
+  }, true);
+  
+  // small interactive demo for newsletter (just alert)
+  const newsletterBtn = document.querySelector('.footer-col .btn-primary');
+  if (newsletterBtn) {
+    newsletterBtn.addEventListener('click', (e) => {
+      const input = document.querySelector('.footer-col input[type="email"]');
+      if (input && input.value.trim()) {
+        alert(`Thanks ${input.value.trim()}! You're now on the Shoploom list.`);
+        input.value = '';
+      } else {
+        alert('Please enter a valid email address.');
+      }
+    });
+  }
+
+  // optional hero shop now smoothie
+  const shopBtn = document.querySelector('.hero .btn-primary');
+  if (shopBtn) {
+    shopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelector('.products-grid')?.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+</script>
+</body>
+</html>

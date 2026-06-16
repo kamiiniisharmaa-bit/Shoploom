@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Shoploom — Terms of Service</title>
+  <!-- Google Fonts & simple CSS reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1a1e2b;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header / nav (consistent with homepage) */
+    .navbar {
+      padding: 20px 0;
+      border-bottom: 1px solid #eef2f6;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(2px);
+      background-color: rgba(255,255,255,0.96);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #1a1e2b 0%, #2c3e66 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .logo span {
+      font-size: 0.9rem;
+      font-weight: 400;
+      background: none;
+      -webkit-background-clip: unset;
+      color: #5b6b8c;
+      display: block;
+      letter-spacing: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c3e50;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #1a1e2b;
+    }
+
+    .cart-icon {
+      position: relative;
+      font-size: 1.3rem;
+    }
+
+    /* terms hero */
+    .terms-hero {
+      background: #fafcff;
+      padding: 60px 0 40px;
+      border-bottom: 1px solid #eef2f6;
+    }
+
+    .terms-hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .terms-hero p {
+      color: #4a5568;
+      font-size: 1.1rem;
+      max-width: 720px;
+    }
+
+    .last-updated {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: #6c7a91;
+      border-left: 3px solid #d4dfed;
+      padding-left: 16px;
+    }
+
+    /* terms content */
+    .terms-content {
+      padding: 60px 0 80px;
+    }
+
+    .terms-section {
+      margin-bottom: 48px;
+    }
+
+    .terms-section h2 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #0f172a;
+      letter-spacing: -0.3px;
+    }
+
+    .terms-section h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 24px 0 12px;
+      color: #1e293b;
+    }
+
+    .terms-section p {
+      color: #334155;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .terms-section ul, .terms-section ol {
+      margin: 16px 0 16px 28px;
+      color: #334155;
+    }
+
+    .terms-section li {
+      margin-bottom: 8px;
+    }
+
+    .highlight-box {
+      background: #f8fafc;
+      border-radius: 24px;
+      padding: 24px 28px;
+      margin: 32px 0;
+      border: 1px solid #eef2f8;
+    }
+
+    .badge-small {
+      background: #eef2ff;
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1e3a8a;
+      margin-bottom: 16px;
+    }
+
+    hr {
+      margin: 32px 0;
+      border: none;
+      border-top: 1px solid #eef2f6;
+    }
+
+    /* footer */
+    footer {
+      background-color: #f8fafc;
+      border-top: 1px solid #eef2f6;
+      padding: 50px 0 30px;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer-col h4 {
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .footer-col p, .footer-col a {
+      color: #475569;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #e2e8f0;
+      color: #5b6b8c;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 800px) {
+      .terms-hero h1 {
+        font-size: 2.2rem;
+      }
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .terms-section h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-container">
+    <div class="logo">
+      <a href="#" style="text-decoration: none;">
+        <h1>SHOPLOOM <span>weave your style</span></h1>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+        <i class="fas fa-bag-shopping"></i>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="terms-hero">
+  <div class="container">
+    <h1>Terms of Service</h1>
+    <p>Welcome to Shoploom. These terms and conditions outline the rules and regulations for using our website and services. By accessing this website, we assume you accept these terms.</p>
+    <div class="last-updated">
+      <i class="far fa-calendar-alt" style="margin-right: 6px;"></i> Last updated: June 15, 2026
+    </div>
+  </div>
+</section>
+
+<section class="terms-content">
+  <div class="container">
+    <div class="highlight-box">
+      <div class="badge-small">📜 Summary</div>
+      <p style="margin-bottom: 0;"><strong>Shoploom</strong> provides a curated fashion marketplace. By using our platform, you agree to comply with our policies. These terms contain important information about your rights, payment obligations, returns, and limitations of liability. Please read carefully.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing or using the Shoploom website (the "Site"), you agree to be bound by these Terms of Service, all applicable laws and regulations, and agree that you are responsible for compliance with any local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this Site. The materials contained on this Site are protected by applicable copyright and trademark law.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>2. General Conditions</h2>
+      <p>We reserve the right to refuse service to anyone for any reason at any time. You understand that your content (excluding credit card information) may be transferred unencrypted and involve (a) transmissions over various networks; and (b) changes to conform and adapt to technical requirements of connecting networks or devices. Credit card information is always encrypted during transfer over networks.</p>
+      <p>You agree not to reproduce, duplicate, copy, sell, resell or exploit any portion of the Service without express written permission by us.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>3. Products & Pricing</h2>
+      <p>All products displayed on Shoploom are subject to availability. We make every effort to display as accurately as possible the colors and images of our products. However, we cannot guarantee that your device's display of any color will be accurate.</p>
+      <p>Prices for our products are subject to change without notice. We reserve the right at any time to modify or discontinue the Service (or any part or content thereof) without notice at any time. We shall not be liable to you or to any third-party for any modification, price change, suspension or discontinuance of the Service.</p>
+      <ul>
+        <li><strong>Taxes:</strong> You are responsible for all applicable taxes (e.g., sales tax, VAT) unless exempt by law.</li>
+        <li><strong>Promotions:</strong> Special offers and discount codes may have additional terms and expire as stated.</li>
+      </ul>
+    </div>
+
+    <div class="terms-section">
+      <h2>4. Orders & Payments</h2>
+      <p>By placing an order, you warrant that you are at least 18 years old and that the information you provide is accurate and complete. We reserve the right to refuse or cancel any order for reasons including but not limited to: product availability, errors in the description or price, or suspected fraud.</p>
+      <p>After placing an order, you will receive an email confirmation. This email is an acknowledgment and not an acceptance of your order. Acceptance occurs when we dispatch the product(s). Accepted payment methods include major credit cards, digital wallets, and Shoploom gift cards.</p>
+      <div class="highlight-box" style="background: #ffffff; margin: 20px 0;">
+        <i class="fas fa-lock" style="margin-right: 12px; color: #2563eb;"></i> All transactions are secured with SSL encryption. Shoploom does not store full payment details.
+      </div>
+    </div>
+
+    <div class="terms-section">
+      <h2>5. Shipping & Delivery</h2>
+      <p>We offer worldwide shipping. Estimated delivery times are provided at checkout but are not guaranteed. Risk of loss and title for items purchased pass to you upon delivery to the carrier. We are not responsible for delays caused by customs, weather, or carrier disruptions.</p>
+      <p>Shipping costs are calculated based on weight, destination, and shipping method chosen. Free shipping promotions apply only to standard delivery within eligible regions.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>6. Returns & Refunds</h2>
+      <p>We want you to love your Shoploom pieces. If you are not completely satisfied, you may return eligible items within 30 days of delivery. Returned items must be unused, with original tags attached, and in original packaging.</p>
+      <ul>
+        <li>Final sale items (including intimates, personalized products) are non-refundable.</li>
+        <li>Refunds will be issued to the original payment method within 14 business days after we receive and inspect the return.</li>
+        <li>Customers are responsible for return shipping costs unless the return is due to our error (e.g., wrong item).</li>
+      </ul>
+      <p>To initiate a return, please visit our Returns Center or contact support@shoploom.com.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>7. User Accounts & Conduct</h2>
+      <p>If you create an account on Shoploom, you are responsible for maintaining the security of your account and for all activities that occur under the account. You must immediately notify us of any unauthorized use. We reserve the right to terminate accounts, edit or remove content, or cancel orders at our sole discretion.</p>
+      <p>You agree not to use the Site for any unlawful purpose, to harass others, to infringe intellectual property, or to distribute malicious software.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>8. Intellectual Property</h2>
+      <p>All content on this Site — including text, graphics, logos, images, product designs, and software — is the property of Shoploom or its content suppliers and is protected by international copyright and trademark laws. You may not reproduce, distribute, or create derivative works without explicit written permission.</p>
+      <p>"Shoploom" and the loom-inspired logo are registered trademarks. Any unauthorized use may result in legal action.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>9. Limitation of Liability</h2>
+      <p>To the fullest extent permitted by law, Shoploom shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation loss of profits, data, use, goodwill, or other intangible losses, arising out of or in connection with your use of the Site or purchase of products.</p>
+      <p>Our total liability to you for any claim arising from these Terms or your use of the Site shall not exceed the amount you paid to us in the past six months.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>10. Third-Party Links</h2>
+      <p>Our Site may contain links to third-party websites or services that are not owned or controlled by Shoploom. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites. You acknowledge and agree that Shoploom shall not be responsible for any damage or loss caused by your use of such sites.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>11. Governing Law & Dispute Resolution</h2>
+      <p>These Terms shall be governed and construed in accordance with the laws of the State of Delaware, without regard to its conflict of law provisions. Any dispute arising out of these Terms shall first be attempted to be resolved through informal negotiation. If the dispute cannot be resolved, it shall be submitted to binding arbitration in Wilmington, Delaware, in accordance with the rules of the American Arbitration Association.</p>
+    </div>
+
+    <div class="terms-section">
+      <h2>12. Changes to Terms</h2>
+      <p>We reserve the right, at our sole discretion, to update, change, or replace any part of these Terms by posting updates on this page. It is your responsibility to check our website periodically for changes. Your continued use of or access to our website following the posting of any changes constitutes acceptance of those changes.</p>
+      <p>For significant changes, we will provide reasonable notice (e.g., email or site banner).</p>
+    </div>
+
+    <hr>
+
+    <div class="terms-section">
+      <h2>Contact Information</h2>
+      <p>If you have any questions about these Terms of Service, please contact us:</p>
+      <ul style="list-style: none; padding-left: 0;">
+        <li><i class="far fa-envelope" style="width: 24px;"></i> <strong>Email:</strong> legal@shoploom.com</li>
+        <li><i class="fas fa-map-marker-alt" style="width: 24px;"></i> <strong>Address:</strong> 123 Weave Street, Suite 400, Wilmington, DE 19801, USA</li>
+        <li><i class="fas fa-headset"></i> <strong>Support:</strong> +1 (800) 555-SHOP</li>
+      </ul>
+      <div style="margin-top: 24px; background: #fef9e6; border-radius: 20px; padding: 16px 20px; border-left: 4px solid #e6b02e;">
+        <i class="fas fa-gavel" style="margin-right: 10px; color: #b45309;"></i> <strong>Arbitration Opt-out:</strong> You may opt out of the arbitration provision within 30 days of creating your account by sending a written notice to legal@shoploom.com.
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>SHOPLOOM</h4>
+        <p>We believe in timeless fashion that respects both people and planet. Every thread, intentional.</p>
+        <div style="margin-top: 10px;">
+          <i class="fab fa-instagram" style="margin-right: 15px;"></i>
+          <i class="fab fa-twitter" style="margin-right: 15px;"></i>
+          <i class="fab fa-pinterest"></i>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#">New arrivals</a>
+        <a href="#">Best sellers</a>
+        <a href="#">Sustainability</a>
+        <a href="#">Gift cards</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">Contact</a>
+        <a href="#">Returns & exchanges</a>
+        <a href="#">Size guide</a>
+        <a href="#">FAQs</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#" style="font-weight: 500;">Terms of Service</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Notice</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2025 Shoploom — Weave your essence. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- small interactive : optional back to top button -->
+<script>
+  // Ensure smooth interactions and also logo link back to home (mock)
+  const logoLink = document.querySelector('.logo a');
+  if (logoLink) {
+    logoLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // In real scenario redirect to index.html, but we emulate homepage anchor
+      alert('✨ Welcome back to Shoploom — This is the Terms page. Use navigation to go to shop.');
+    });
+  }
+  // make cart icon simple alert for demo
+  const cartIcon = document.querySelector('.cart-icon');
+  if (cartIcon) {
+    cartIcon.addEventListener('click', () => {
+      alert('Your cart is currently empty. Start exploring our collection!');
+    });
+  }
+  // add a small last updated dynamic (optional)
+  console.log('Shoploom Terms page ready — all images and content integrated.');
+</script>
+</body>
+</html>

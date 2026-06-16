@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Shoploom — Privacy Policy</title>
+  <!-- Google Fonts & simple CSS reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1a1e2b;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header / nav (consistent with homepage) */
+    .navbar {
+      padding: 20px 0;
+      border-bottom: 1px solid #eef2f6;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(2px);
+      background-color: rgba(255,255,255,0.96);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #1a1e2b 0%, #2c3e66 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .logo span {
+      font-size: 0.9rem;
+      font-weight: 400;
+      background: none;
+      -webkit-background-clip: unset;
+      color: #5b6b8c;
+      display: block;
+      letter-spacing: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #2c3e50;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #1a1e2b;
+    }
+
+    .cart-icon {
+      position: relative;
+      font-size: 1.3rem;
+    }
+
+    /* privacy hero */
+    .privacy-hero {
+      background: #fafcff;
+      padding: 60px 0 40px;
+      border-bottom: 1px solid #eef2f6;
+    }
+
+    .privacy-hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .privacy-hero p {
+      color: #4a5568;
+      font-size: 1.1rem;
+      max-width: 720px;
+    }
+
+    .last-updated {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: #6c7a91;
+      border-left: 3px solid #d4dfed;
+      padding-left: 16px;
+    }
+
+    /* privacy content */
+    .privacy-content {
+      padding: 60px 0 80px;
+    }
+
+    .privacy-section {
+      margin-bottom: 48px;
+    }
+
+    .privacy-section h2 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #0f172a;
+      letter-spacing: -0.3px;
+    }
+
+    .privacy-section h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 24px 0 12px;
+      color: #1e293b;
+    }
+
+    .privacy-section p {
+      color: #334155;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .privacy-section ul, .privacy-section ol {
+      margin: 16px 0 16px 28px;
+      color: #334155;
+    }
+
+    .privacy-section li {
+      margin-bottom: 8px;
+    }
+
+    .highlight-box {
+      background: #f8fafc;
+      border-radius: 24px;
+      padding: 24px 28px;
+      margin: 32px 0;
+      border: 1px solid #eef2f8;
+    }
+
+    .badge-small {
+      background: #eef2ff;
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1e3a8a;
+      margin-bottom: 16px;
+    }
+
+    hr {
+      margin: 32px 0;
+      border: none;
+      border-top: 1px solid #eef2f6;
+    }
+
+    /* cookie table */
+    .cookie-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.9rem;
+    }
+    .cookie-table th, .cookie-table td {
+      border: 1px solid #e2e8f0;
+      padding: 12px 16px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .cookie-table th {
+      background: #f1f5f9;
+      font-weight: 600;
+    }
+
+    /* footer */
+    footer {
+      background-color: #f8fafc;
+      border-top: 1px solid #eef2f6;
+      padding: 50px 0 30px;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer-col h4 {
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .footer-col p, .footer-col a {
+      color: #475569;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #e2e8f0;
+      color: #5b6b8c;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 800px) {
+      .privacy-hero h1 {
+        font-size: 2.2rem;
+      }
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .privacy-section h2 {
+        font-size: 1.4rem;
+      }
+      .cookie-table th, .cookie-table td {
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-container">
+    <div class="logo">
+      <a href="#" style="text-decoration: none;">
+        <h1>SHOPLOOM <span>weave your style</span></h1>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+        <i class="fas fa-bag-shopping"></i>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="privacy-hero">
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p>At Shoploom, we respect your privacy and are committed to protecting your personal data. This policy describes how we collect, use, and safeguard your information when you visit our website or make a purchase.</p>
+    <div class="last-updated">
+      <i class="far fa-calendar-alt" style="margin-right: 6px;"></i> Last updated: June 15, 2026
+    </div>
+  </div>
+</section>
+
+<section class="privacy-content">
+  <div class="container">
+    <div class="highlight-box">
+      <div class="badge-small">🔒 Our Commitment</div>
+      <p style="margin-bottom: 0;"><strong>Shoploom</strong> operates with transparency. We never sell your personal information. This notice explains what data we collect, why we collect it, and your choices regarding your information.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>1. Information We Collect</h2>
+      <p>We collect information that identifies, relates to, describes, or is reasonably capable of being associated with you. This includes:</p>
+      <ul>
+        <li><strong>Personal Identifiers:</strong> Name, email address, shipping/billing address, phone number, account credentials.</li>
+        <li><strong>Payment Information:</strong> Credit card details (processed via secure PCI-DSS compliant gateways — we do not store full card numbers).</li>
+        <li><strong>Transaction Data:</strong> Products purchased, order history, returns, and wishlist items.</li>
+        <li><strong>Usage Data:</strong> IP address, browser type, device information, pages visited, time spent, and referring URLs.</li>
+        <li><strong>Communications:</strong> Customer support inquiries, feedback, survey responses.</li>
+      </ul>
+      <p>We also collect information automatically through cookies and similar tracking technologies (see Section 7).</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>2. How We Collect Your Information</h2>
+      <p>We obtain personal data through the following methods:</p>
+      <ul>
+        <li><strong>Direct interactions:</strong> When you create an account, place an order, subscribe to our newsletter, or contact customer support.</li>
+        <li><strong>Automated technologies:</strong> As you browse our Site, we collect technical data via cookies, log files, and web beacons.</li>
+        <li><strong>Third parties:</strong> We may receive data from analytics providers (like Google Analytics), payment processors, or shipping carriers to facilitate deliveries.</li>
+      </ul>
+    </div>
+
+    <div class="privacy-section">
+      <h2>3. How We Use Your Information</h2>
+      <p>Shoploom uses personal data for the following legitimate business purposes:</p>
+      <ul>
+        <li>Processing and fulfilling your orders, including shipping, returns, and exchanges.</li>
+        <li>Managing your account and providing customer support.</li>
+        <li>Sending you transactional emails (order confirmations, shipping updates).</li>
+        <li>Marketing communications — only with your consent (you may opt out anytime).</li>
+        <li>Improving our website, personalizing your experience, and analyzing trends.</li>
+        <li>Preventing fraud, ensuring security, and complying with legal obligations.</li>
+      </ul>
+      <div class="highlight-box" style="background: #ffffff; margin: 20px 0;">
+        <i class="fas fa-envelope-open-text" style="margin-right: 12px; color: #2563eb;"></i> <strong>Marketing preferences:</strong> You can unsubscribe from promotional emails by clicking the "unsubscribe" link at the bottom of any email.
+      </div>
+    </div>
+
+    <div class="privacy-section">
+      <h2>4. Sharing & Disclosure</h2>
+      <p>We do not sell, trade, or rent your personal information to third parties for their own marketing purposes. However, we may share data with trusted service providers strictly necessary to operate our business:</p>
+      <ul>
+        <li><strong>Delivery partners</strong> (e.g., FedEx, USPS, DHL) to ship your orders.</li>
+        <li><strong>Payment processors</strong> (Stripe, PayPal, Shopify Payments) to handle transactions securely.</li>
+        <li><strong>IT and analytics providers</strong> (Google Analytics, Hotjar) to improve site performance.</li>
+        <li><strong>Legal authorities</strong> if required by law, to enforce our terms, or protect rights.</li>
+      </ul>
+      <p>All third parties are bound by confidentiality agreements and may only use data for the specific services they provide to Shoploom.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>5. Data Retention</h2>
+      <p>We retain your personal information for as long as your account is active or as needed to provide you services, comply with legal obligations, resolve disputes, and enforce our agreements. Typically:</p>
+      <ul>
+        <li>Order data: 7 years (for tax and accounting purposes).</li>
+        <li>Account information: Until you request deletion or after 3 years of inactivity.</li>
+        <li>Marketing data: Until you unsubscribe.</li>
+      </ul>
+      <p>After retention periods expire, we securely delete or anonymize your data.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>6. Your Privacy Rights</h2>
+      <p>Depending on your location (e.g., GDPR for EU, CCPA for California residents), you may have the following rights:</p>
+      <ul>
+        <li><strong>Right to Access:</strong> Request a copy of the personal data we hold about you.</li>
+        <li><strong>Right to Rectification:</strong> Correct inaccurate or incomplete information.</li>
+        <li><strong>Right to Erasure (Right to be Forgotten):</strong> Request deletion of your data.</li>
+        <li><strong>Right to Restrict Processing:</strong> Limit how we use your data.</li>
+        <li><strong>Right to Data Portability:</strong> Receive your data in a structured, machine-readable format.</li>
+        <li><strong>Right to Opt-Out of Sale/Sharing:</strong> We do not sell data, but you may opt out of targeted advertising cookies.</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us at <strong>privacy@shoploom.com</strong>. We will respond within 30 days. Verification may be required.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>7. Cookies & Tracking Technologies</h2>
+      <p>Shoploom uses cookies to enhance your browsing experience, analyze site traffic, and personalize content. Cookies are small text files stored on your device. You can manage cookie preferences via your browser settings.</p>
+      <table class="cookie-table">
+        <thead>
+          <tr><th>Type</th><th>Purpose</th><th>Duration</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Essential Cookies</td><td>Necessary for site functionality (shopping cart, login, checkout).</td><td>Session / Persistent</td></tr>
+          <tr><td>Analytics/Performance</td><td>Help us understand how visitors interact with our Site (Google Analytics).</td><td>Up to 2 years</td></tr>
+          <tr><td>Functional Cookies</td><td>Remember your preferences (currency, language, saved items).</td><td>Up to 12 months</td></tr>
+          <tr><td>Targeting/Advertising</td><td>Display relevant product recommendations and measure ad effectiveness.</td><td>Up to 180 days</td></tr>
+        </tbody>
+      </table>
+      <p>You can block cookies by activating settings on your browser. However, some parts of the Site may not function properly. For more details, see our <a href="#" style="color:#1e3a8a;">Cookie Notice</a>.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>8. Children's Privacy</h2>
+      <p>Our services are not directed to individuals under the age of 16. We do not knowingly collect personal information from children. If you believe a child has provided us with data, please contact us, and we will delete it promptly.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>9. Security Measures</h2>
+      <p>We implement industry-standard security safeguards to protect your data, including:</p>
+      <ul>
+        <li>SSL/TLS encryption for all data transmitted between your browser and our servers.</li>
+        <li>Regular vulnerability scans and PCI compliance for payment processing.</li>
+        <li>Access controls — only authorized personnel can access personal data on a need-to-know basis.</li>
+        <li>Secure storage with encrypted backups.</li>
+      </ul>
+      <p>While no method of transmission over the Internet is 100% secure, we strive to use commercially acceptable means to protect your information.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>10. International Data Transfers</h2>
+      <p>Shoploom is headquartered in the United States, and your information may be transferred to, stored, or processed in countries other than your own. For users in the EEA or UK, we ensure adequate safeguards (such as Standard Contractual Clauses) are in place to protect your data.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>11. Third-Party Links</h2>
+      <p>Our Site may contain links to external websites (e.g., social media, brand partners). We are not responsible for the privacy practices of those sites. We encourage you to review their policies before providing any personal information.</p>
+    </div>
+
+    <div class="privacy-section">
+      <h2>12. Changes to This Privacy Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. The revised version will be indicated by an updated "Last updated" date. Material changes will be notified via email or a prominent notice on our website.</p>
+    </div>
+
+    <hr>
+
+    <div class="privacy-section">
+      <h2>Contact Us</h2>
+      <p>If you have questions, concerns, or wish to exercise your privacy rights, please contact our Data Protection Officer (DPO) at:</p>
+      <ul style="list-style: none; padding-left: 0;">
+        <li><i class="far fa-envelope" style="width: 24px;"></i> <strong>Email:</strong> privacy@shoploom.com</li>
+        <li><i class="fas fa-map-marker-alt" style="width: 24px;"></i> <strong>Address:</strong> Shoploom Legal, 123 Weave Street, Suite 400, Wilmington, DE 19801, USA</li>
+        <li><i class="fas fa-phone-alt"></i> <strong>Privacy hotline:</strong> +1 (800) 555-PRIV</li>
+      </ul>
+      <div style="margin-top: 24px; background: #eef2ff; border-radius: 20px; padding: 16px 20px; border-left: 4px solid #3b82f6;">
+        <i class="fas fa-user-shield" style="margin-right: 10px; color: #1e40af;"></i> <strong>For EU/UK residents:</strong> You have the right to lodge a complaint with your local supervisory authority if you feel your data is mishandled.
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>SHOPLOOM</h4>
+        <p>We believe in timeless fashion that respects both people and planet. Every thread, intentional.</p>
+        <div style="margin-top: 10px;">
+          <i class="fab fa-instagram" style="margin-right: 15px;"></i>
+          <i class="fab fa-twitter" style="margin-right: 15px;"></i>
+          <i class="fab fa-pinterest"></i>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#">New arrivals</a>
+        <a href="#">Best sellers</a>
+        <a href="#">Sustainability</a>
+        <a href="#">Gift cards</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#">Contact</a>
+        <a href="#">Returns & exchanges</a>
+        <a href="#">Size guide</a>
+        <a href="#">FAQs</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Terms of Service</a>
+        <a href="#" style="font-weight: 500;">Privacy Policy</a>
+        <a href="#">Cookie Notice</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2025 Shoploom — Weave your essence. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Interactive elements: logo navigation & cart alert
+  const logoLink = document.querySelector('.logo a');
+  if (logoLink) {
+    logoLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      alert('✨ Welcome back to Shoploom — This is the Privacy Policy page.');
+    });
+  }
+  const cartIcon = document.querySelector('.cart-icon');
+  if (cartIcon) {
+    cartIcon.addEventListener('click', () => {
+      alert('Your cart is currently empty. Discover our collection with confidence — your privacy matters.');
+    });
+  }
+  // add cookie notice placeholder simulation
+  console.log('Shoploom Privacy Policy loaded — fully compliant with modern standards.');
+</script>
+</body>
+</html>
